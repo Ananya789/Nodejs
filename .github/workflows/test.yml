@@ -1,0 +1,9 @@
+name: hello-world
+on: create
+jobs:
+  my-job:
+    if [[ ${{ github.ref_name }} =~ ^(develop|master|release\/.*)|(feature\/WEGCE-000-WS.*)$]]
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Hello World!"
