@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/anu1101/hello-world:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.CR_PAT }}
     steps:
       - run: echo "hello world"
