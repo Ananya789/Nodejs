@@ -2,10 +2,11 @@ name: hello-world
 on:
   push:
     branches:
-    - 'feature/WEGCE-000-WS*'
+    - 'main'
 jobs:
   my-job:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/anu1101/hello-world:latest
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - run: echo "hello world"
